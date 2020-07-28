@@ -10,11 +10,11 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface PatientDao
+public interface NurseDao
 {
- @Insert
- void insert(Patient patient);
+    @Insert
+    void insert(Nurse nurse);
 
-    @Query("select * from Patient order by firstName")
-    LiveData<List<Patient>> getAllPatients();
+    @Query("select * from Nurse order by nurseId")
+    LiveData<List<Nurse>> getAllNurses();
 }

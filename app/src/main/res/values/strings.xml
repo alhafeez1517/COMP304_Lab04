@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EarlDenzelPerez_AlHafeezAbdulSalam_COMP304_Sec001_Lab04_Ex1</string>
+    <string name="login">Login</string>
+    <string name="enter_patient">Enter/View Patient</string>
+    <string name="enter_test">Enter Test Data</string>
+    <string name="view_test">View Test Information</string>
+    <string name="update_patient">Update Patient Information</string>
+    <string name="logout">Logout</string>
 </resources>

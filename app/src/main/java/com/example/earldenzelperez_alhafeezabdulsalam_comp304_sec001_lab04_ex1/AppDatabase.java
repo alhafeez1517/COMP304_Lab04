@@ -10,12 +10,13 @@ import androidx.room.RoomDatabase;
 //--> THIS DEFINITELY NEEDS SOME CHANGING IN THE FUTURE(TOMORROW) <--//
 
 
-@Database(entities = {Patient.class,Test.class,Nurse.class}, version = 1)
+@Database(entities = {Patient.class, MedicalTest.class,Nurse.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase
 {
     private static volatile AppDatabase INSTANCE;
     private static final String DATABASE_NAME = "HospitalData";
     public abstract PatientDao patientDao();
+    public abstract NurseDao nurseDao();
     //
     public static synchronized AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {

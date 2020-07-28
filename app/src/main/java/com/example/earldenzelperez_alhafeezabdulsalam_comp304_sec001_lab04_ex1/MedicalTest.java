@@ -3,23 +3,22 @@ package com.example.earldenzelperez_alhafeezabdulsalam_comp304_sec001_lab04_ex1;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import android.os.Bundle;
-
 @Entity
-public class Test
+public class MedicalTest
 {
-@PrimaryKey
+    @PrimaryKey
     private int testId;
+
     private int patientId,nurseId;
 
     float bpl,bpm,temperature;
 
-    public Test()
+    public MedicalTest()
     {
 
     }
 
-    public Test(int testId,int patientId,int nurseId,float bpl,float bpm,float temperature)
+    public MedicalTest(int testId, int patientId, int nurseId, float bpl, float bpm, float temperature)
     {
         this.testId = testId;
         this.patientId = patientId;
@@ -33,7 +32,7 @@ public class Test
     public int getTestId() { return testId; }
     public void setTestId(int id) { this.testId=id; }
 
-    public int getPatientIdId() { return patientId; }
+    public int getPatientId() { return patientId; }
     public void setPatientId(int id) { this.patientId=id; }
 
     public int getNurseId() { return nurseId; }
