@@ -5,18 +5,12 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import java.util.List;
-
 @Dao
 public interface NurseDao
 {
     @Insert (onConflict = OnConflictStrategy.REPLACE)
     void insert(Nurse nurse);
 
-    @Query("select * from Nurse")
-    List<Nurse> getAllNurses();
-
-    //Monitoring Query Result Changes with Live Data
     @Query("select * from Nurse where nurseId = :id and password = :password LIMIT 1")
     Nurse getNurse(int id, String password);
 }

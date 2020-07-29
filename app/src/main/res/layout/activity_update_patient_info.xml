@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".UpdatePatientInfoActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/first_name" />
+
+    <EditText
+        android:id="@+id/txPtFirstNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/last_name" />
+
+    <EditText
+        android:id="@+id/txPtLastNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/department" />
+
+    <EditText
+        android:id="@+id/txDepartmentEdit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/room" />
+
+    <EditText
+        android:id="@+id/txRoomEdit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnUpdatePt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:onClick="onUpdateAttempt"
+        android:text="@string/update_patient" />
+</LinearLayout>

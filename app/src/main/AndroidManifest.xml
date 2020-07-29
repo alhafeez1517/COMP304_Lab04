@@ -8,11 +8,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdatePatientInfoActivity"></activity>
-        <activity android:name=".ViewTestInfoActivity" />
-        <activity android:name=".EnterTestDataActivity" />
-        <activity android:name=".EnterPatientActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".ViewPatientInfoActivity"
+            android:label="@string/view_patient">></activity>
+        <activity
+            android:name=".UpdatePatientInfoActivity"
+            android:label="@string/update_patient_info"></activity>
+        <activity
+            android:name=".ViewTestInfoActivity"
+            android:label="@string/view_test"></activity>
+        <activity
+            android:name=".EnterTestDataActivity"
+            android:label="@string/enter_test"></activity>
+        <activity
+            android:name=".EnterPatientActivity"
+            android:label="@string/enter_patient"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/login"></activity>
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.

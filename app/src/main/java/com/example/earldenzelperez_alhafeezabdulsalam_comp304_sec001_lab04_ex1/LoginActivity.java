@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +17,6 @@ public class LoginActivity extends AppCompatActivity {
     Button trueLogin;
     private EditText txtNurseId;
     private EditText txtPassword;
-    private TextView txtCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

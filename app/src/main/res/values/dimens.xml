@@ -13,4 +13,5 @@
     -->
     <dimen name="inner_frame_layout_padding">5dp</dimen>
     <dimen name="default_button_height">60dp</dimen>
+    <dimen name="default_button_half_height">30dp</dimen>
 </resources>

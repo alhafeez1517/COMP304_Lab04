@@ -2,10 +2,7 @@ package com.example.earldenzelperez_alhafeezabdulsalam_comp304_sec001_lab04_ex1;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-
-import android.os.Bundle;
-@Entity
+@Entity (tableName = "Patient")
 public class Patient
 {
     @PrimaryKey

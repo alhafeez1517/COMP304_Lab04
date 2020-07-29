@@ -16,7 +16,7 @@
     <EditText
         android:id="@+id/txtNurseId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/default_button_height"
         android:ems="10"
         android:inputType="number" />
 
@@ -29,14 +29,14 @@
     <EditText
         android:id="@+id/txtPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/default_button_height"
         android:ems="10"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnTrueLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/default_button_height"
         android:text="@string/login" />
 
 </LinearLayout>

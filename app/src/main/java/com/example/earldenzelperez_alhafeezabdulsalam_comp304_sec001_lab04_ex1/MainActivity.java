@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Nurse nurse1, nurse2;
                 nurse1 = new Nurse(1001, "Al Hafeez", "Abdul Salam", "Oncology", "password");
                 nurse2 = new Nurse(1002, "Earl Denzel", "Perez", "Emergency", "password");
@@ -71,7 +70,7 @@ public class MainActivity extends AppCompatActivity
         updatePatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, UpdatePatientInfoActivity.class));
+                startActivity(new Intent(MainActivity.this, ViewPatientInfoActivity.class));
             }
         });
 

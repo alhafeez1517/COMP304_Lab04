@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutPatients"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".ViewPatientInfoActivity">
+
+    <TextView
+        android:id="@+id/txtNotice"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_half_height"
+        android:gravity="center"
+        android:text="@string/click_to_edit" />
+
+    <RadioGroup
+        android:id="@+id/rgPatients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnUpdatePatient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSelectPatient"
+        android:text="@string/select_patient" />
+</LinearLayout>

@@ -4,9 +4,21 @@
     <string name="enter_patient">Enter/View Patient</string>
     <string name="enter_test">Enter Test Data</string>
     <string name="view_test">View Test Information</string>
-    <string name="update_patient">Update Patient Information</string>
+    <string name="view_patient">View Patient Information</string>
+    <string name="view_update_patient">View/Update Patient Information</string>
+    <string name="update_patient_info">Update Patient Information</string>
     <string name="logout">Logout</string>
     <string name="nurse_id">Nurse ID</string>
     <string name="password">Password</string>
     <string name="login_required">Login is required to use the app</string>
+    <string name="patient_id">Patient ID</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="department">Department</string>
+    <string name="room">Room</string>
+    <string name="no_patients">You don\'t have patients at the moment. Add one!</string>
+    <string name="click_to_edit">Choose a patient to edit their information!</string>
+    <string name="add_patient">Add Patient</string>
+    <string name="update_patient">Update Patient</string>
+    <string name="select_patient">Select Patient</string>
 </resources>
