@@ -1,6 +1,5 @@
 package com.example.earldenzelperez_alhafeezabdulsalam_comp304_sec001_lab04_ex1;
 
-import android.app.Person;
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
@@ -13,19 +12,21 @@ public class NurseRepository
 
     private final NurseDao nurseDao;
     private MutableLiveData<Integer> insertResult = new MutableLiveData<>();
-    private LiveData<List<Nurse>> nurseList;
+    private List<Nurse> nurseList;
+
     //
     public NurseRepository(Context context) {
         //create a database object
         AppDatabase db = AppDatabase.getInstance(context);
         //create an interface object
         nurseDao = db.nurseDao();
+
         //call interface method
         nurseList = nurseDao.getAllNurses();
     }
     // returns query results as LiveData object
 
-    LiveData<List<Nurse>> getAllNurses()
+    List<Nurse> getAllNurses()
     {
         return nurseList;
     }
@@ -60,5 +61,9 @@ public class NurseRepository
                 }
             }
         }).start();
+    }
+
+    public Nurse getNurse(int id, String password){
+        return nurseDao.getNurse(id, password);
     }
 }

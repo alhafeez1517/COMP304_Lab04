@@ -14,7 +14,7 @@ public class NurseViewModel extends AndroidViewModel
     // sending the results to the Activity
     private NurseRepository nurseRepository;
     private LiveData<Integer> insertResult;
-    private LiveData<List<Nurse>> allNurses;
+    private List<Nurse> allNurses;
     //
     public NurseViewModel(@NonNull Application application)
     {
@@ -32,5 +32,17 @@ public class NurseViewModel extends AndroidViewModel
         return insertResult;
     }
     //returns query results as live data object
-    LiveData<List<Nurse>> getAllNurses() { return allNurses; }
+    List<Nurse> getAllNurses() { return allNurses; }
+
+    public Nurse getNurse(int nurseId, String password){
+        Nurse nurse = nurseRepository.getNurse(nurseId, password);
+        if (nurse == null){
+            return null;
+        }
+        else{
+            return nurse;
+        }
+
+    }
+
 }

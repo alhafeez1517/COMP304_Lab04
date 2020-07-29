@@ -5,26 +5,26 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 public class MainActivity extends AppCompatActivity
 {
-    private NurseViewModel nurseViewModel;
-    //preference data variable
     private SharedPreferences myPreference;
-    //variable to modify preference data
     SharedPreferences.Editor prefEditor;
-    Nurse nurse1, nurse2;
     Button login, enterPatient, enterTest, viewTest, updatePatient, logout;
+    TextView txIndicator;
+    private NurseViewModel nurseViewModel;
+    int loaded = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addAllNurses();
+        nurseViewModel = ViewModelProviders.of(this).get(NurseViewModel.class);
 
         myPreference = getSharedPreferences("info", MODE_PRIVATE);
         prefEditor = myPreference.edit();
@@ -33,6 +33,12 @@ public class MainActivity extends AppCompatActivity
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Nurse nurse1, nurse2;
+                nurse1 = new Nurse(1001, "Al Hafeez", "Abdul Salam", "Oncology", "password");
+                nurse2 = new Nurse(1002, "Earl Denzel", "Perez", "Emergency", "password");
+                nurseViewModel.insert(nurse1);
+                nurseViewModel.insert(nurse2);
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
@@ -41,7 +47,7 @@ public class MainActivity extends AppCompatActivity
         enterPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, EnterPatientActivity.class));
             }
         });
 
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity
         enterTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, EnterTestDataActivity.class));
             }
         });
 
@@ -57,7 +63,7 @@ public class MainActivity extends AppCompatActivity
         viewTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, ViewTestInfoActivity.class));
             }
         });
 
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity
         updatePatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, UpdatePatientInfoActivity.class));
             }
         });
 
@@ -73,6 +79,10 @@ public class MainActivity extends AppCompatActivity
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                prefEditor.putInt("nurseId", 0);
+                prefEditor.commit();
+                finish();
+                startActivity(getIntent());
             }
         });
 
@@ -100,33 +110,15 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
-    //prepopulates app with 2 nurses
-    private void addAllNurses(){
-        nurse1 = new Nurse();
-        nurse1.setFirstName("Al Hafeez");
-        nurse1.setLastName("Abdul Salam");
-        nurse1.setNurseId(1001);
-        nurse1.setDepartment("Oncology");
-        nurse1.setPassword("password");
-
-        nurse2 = new Nurse();
-        nurse2.setFirstName("Earl Denzel");
-        nurse2.setLastName("Perez");
-        nurse2.setNurseId(1002);
-        nurse2.setDepartment("Emergency");
-        nurse2.setPassword("password");
-
-        nurseViewModel = ViewModelProviders.of(this).get(NurseViewModel.class);
-        nurseViewModel.insert(nurse1);
-        nurseViewModel.insert(nurse2);
-
-
-    }
-
     private boolean checkLoggedIn(){
-        if (myPreference.getInt("nurseId", 0) > 0){
+        int nurseId = myPreference.getInt("nurseId", 0);
+        txIndicator = (TextView) findViewById(R.id.txtUserIndicator);
+        if (  nurseId > 0){
+            txIndicator.setText(myPreference.getString("nurseName", "UNKNOWN_USER"));
             return true;
+        }
+        else{
+            txIndicator.setText(getResources().getString(R.string.login_required));
         }
         return false;
     }
