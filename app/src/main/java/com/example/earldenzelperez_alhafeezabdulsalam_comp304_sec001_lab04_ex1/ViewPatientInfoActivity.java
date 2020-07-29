@@ -48,7 +48,6 @@ public class ViewPatientInfoActivity extends AppCompatActivity {
 
         rb = new RadioButton[patientList.size()];
         rg = (RadioGroup) findViewById(R.id.rgPatients);
-        int radioButtonID = rg.getCheckedRadioButtonId();
         rg.removeAllViews();
 
         Iterator<Patient> it = patientList.iterator();
@@ -68,7 +67,7 @@ public class ViewPatientInfoActivity extends AppCompatActivity {
 
     }
 
-    public void onSelectPatient(View view) {
+    public void onUpdatePatient(View view) {
         if (rg.getCheckedRadioButtonId() == -1)
         {
             Toast.makeText(this, "You have to select a user!", Toast.LENGTH_SHORT).show();
@@ -76,6 +75,42 @@ public class ViewPatientInfoActivity extends AppCompatActivity {
         else
         {
             Intent intent = new Intent(this, UpdatePatientInfoActivity.class);
+            for(int i = 0; i<rb.length; i++){
+                if (rb[i].isChecked()){
+                    prefEditor.putInt("patientId", rb[i].getId());
+                    prefEditor.commit();
+                    startActivity(intent);
+                }
+            }
+        }
+    }
+
+    public void onAddTests(View view) {
+        if (rg.getCheckedRadioButtonId() == -1)
+        {
+            Toast.makeText(this, "You have to select a user!", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Intent intent = new Intent(this, EnterTestDataActivity.class);
+            for(int i = 0; i<rb.length; i++){
+                if (rb[i].isChecked()){
+                    prefEditor.putInt("patientId", rb[i].getId());
+                    prefEditor.commit();
+                    startActivity(intent);
+                }
+            }
+        }
+    }
+
+    public void onViewTests(View view) {
+        if (rg.getCheckedRadioButtonId() == -1)
+        {
+            Toast.makeText(this, "You have to select a user!", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Intent intent = new Intent(this, ViewTestInfoActivity.class);
             for(int i = 0; i<rb.length; i++){
                 if (rb[i].isChecked()){
                     prefEditor.putInt("patientId", rb[i].getId());

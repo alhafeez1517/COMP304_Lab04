@@ -1,9 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".EnterTestDataActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_half_height"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/enter_test" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bpl" />
+
+    <EditText
+        android:id="@+id/txBPL"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bpm" />
+
+    <EditText
+        android:id="@+id/txBPM"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature" />
+
+    <EditText
+        android:id="@+id/txTemp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ferritin" />
+
+    <EditText
+        android:id="@+id/txFerritin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cholesterol" />
+
+    <EditText
+        android:id="@+id/txCholesterol"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnAddTest"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:onClick="onAddAttempt"
+        android:text="@string/add_test_info" />
+
+</LinearLayout>

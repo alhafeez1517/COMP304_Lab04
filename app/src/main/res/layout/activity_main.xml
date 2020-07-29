@@ -34,20 +34,6 @@
             android:text="@string/enter_patient" />
 
         <Button
-            android:id="@+id/btnEnterTest"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/default_button_height"
-            android:layout_weight="1"
-            android:text="@string/enter_test" />
-
-        <Button
-            android:id="@+id/btnViewTest"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/default_button_height"
-            android:layout_weight="1"
-            android:text="@string/view_test" />
-
-        <Button
             android:id="@+id/btnUpdatePatient"
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_button_height"

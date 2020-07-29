@@ -4,7 +4,7 @@
     <string name="enter_patient">Enter/View Patient</string>
     <string name="enter_test">Enter Test Data</string>
     <string name="view_test">View Test Information</string>
-    <string name="view_patient">View Patient Information</string>
+    <string name="view_patient">Patient Information</string>
     <string name="view_update_patient">View/Update Patient Information</string>
     <string name="update_patient_info">Update Patient Information</string>
     <string name="logout">Logout</string>
@@ -17,8 +17,16 @@
     <string name="department">Department</string>
     <string name="room">Room</string>
     <string name="no_patients">You don\'t have patients at the moment. Add one!</string>
-    <string name="click_to_edit">Choose a patient to edit their information!</string>
+    <string name="click_to_edit">Choose a patient, then select what you want to do!</string>
     <string name="add_patient">Add Patient</string>
     <string name="update_patient">Update Patient</string>
-    <string name="select_patient">Select Patient</string>
+    <string name="select_patient">Update Patient Information</string>
+    <string name="bpl">BPL</string>
+    <string name="bpm">BPM</string>
+    <string name="temperature">Temperature</string>
+    <string name="ferritin">Ferritin</string>
+    <string name="cholesterol">Cholesterol</string>
+    <string name="add_test_info">Add Test Information</string>
+    <string name="no_tests_present">There are no tests present for this patient!</string>
+    <string name="tests_present">Here are all the tests for the selected patient</string>
 </resources>

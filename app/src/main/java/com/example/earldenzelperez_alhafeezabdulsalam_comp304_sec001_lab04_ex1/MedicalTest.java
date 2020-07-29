@@ -3,30 +3,34 @@ package com.example.earldenzelperez_alhafeezabdulsalam_comp304_sec001_lab04_ex1;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity (tableName = "MedicalTest")
 public class MedicalTest
 {
-    @PrimaryKey
+    @PrimaryKey (autoGenerate = true)
     private int testId;
 
     private int patientId,nurseId;
 
-    float bpl,bpm,temperature;
+    float bpl;
+    float bpm;
+    float temperature;
+    float cholesterol;
+    float ferritin;
 
     public MedicalTest()
     {
 
     }
 
-    public MedicalTest(int testId, int patientId, int nurseId, float bpl, float bpm, float temperature)
+    public MedicalTest(int patientId, int nurseId, float bpl, float bpm, float temperature, float ferritin, float cholesterol)
     {
-        this.testId = testId;
         this.patientId = patientId;
         this.nurseId = nurseId;
         this.bpl = bpl;
         this.bpm = bpm;
         this.temperature = temperature;
-
+        this.cholesterol = cholesterol;
+        this.ferritin = ferritin;
     }
 
     public int getTestId() { return testId; }
@@ -46,6 +50,12 @@ public class MedicalTest
 
     public float getTemperature() { return temperature; }
     public void setTemperature(float temperature) { this.temperature=temperature; }
+
+    public float getCholesterol() { return cholesterol; }
+    public void setCholesterol(float cholesterol) { this.cholesterol = cholesterol; }
+
+    public float getFerritin() { return ferritin; }
+    public void setFerritin(float ferritin) { this.ferritin = ferritin; }
 
 
 }

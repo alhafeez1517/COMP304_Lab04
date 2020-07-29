@@ -18,14 +18,11 @@ public class PatientViewModel extends AndroidViewModel
     {
         super(application);
         patientRepository = new PatientRepository(application);
-        allPatients =  patientRepository.getAllPatients();
     }
     //calls repository to insert a person
     public void insert(Patient person) {
         patientRepository.insert(person);
     }
-    //returns query results as live data object
-    List<Patient> getAllPatients() { return allPatients; }
 
     public int checkPatientExists(int id){ return patientRepository.checkPatientExists(id);}
 

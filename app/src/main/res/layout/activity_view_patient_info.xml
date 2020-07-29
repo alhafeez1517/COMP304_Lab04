@@ -25,7 +25,21 @@
     <Button
         android:id="@+id/btnUpdatePatient"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onSelectPatient"
+        android:layout_height="@dimen/default_button_height"
+        android:onClick="onUpdatePatient"
         android:text="@string/select_patient" />
+
+    <Button
+        android:id="@+id/btnEnterTest"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:onClick="onAddTests"
+        android:text="@string/enter_test" />
+
+    <Button
+        android:id="@+id/btnViewTest"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_button_height"
+        android:onClick="onViewTests"
+        android:text="@string/view_test" />
 </LinearLayout>

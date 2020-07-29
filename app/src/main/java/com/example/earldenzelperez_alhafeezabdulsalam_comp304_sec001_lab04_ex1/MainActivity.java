@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity
 {
     private SharedPreferences myPreference;
     SharedPreferences.Editor prefEditor;
-    Button login, enterPatient, enterTest, viewTest, updatePatient, logout;
+    Button login, enterPatient, updatePatient, logout;
     TextView txIndicator;
     private NurseViewModel nurseViewModel;
     int loaded = 0;
@@ -50,22 +50,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        enterTest = (Button) findViewById(R.id.btnEnterTest);
-        enterTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, EnterTestDataActivity.class));
-            }
-        });
-
-        viewTest = (Button) findViewById(R.id.btnViewTest);
-        viewTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ViewTestInfoActivity.class));
-            }
-        });
-
         updatePatient = (Button) findViewById(R.id.btnUpdatePatient);
         updatePatient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,16 +78,12 @@ public class MainActivity extends AppCompatActivity
         if (checkLoggedIn()){
             login.setVisibility(View.INVISIBLE);
             enterPatient.setVisibility(View.VISIBLE);
-            enterTest.setVisibility(View.VISIBLE);
-            viewTest.setVisibility(View.VISIBLE);
             updatePatient.setVisibility(View.VISIBLE);
             logout.setVisibility(View.VISIBLE);
         }
         else{
             login.setVisibility(View.VISIBLE);
             enterPatient.setVisibility(View.INVISIBLE);
-            enterTest.setVisibility(View.INVISIBLE);
-            viewTest.setVisibility(View.INVISIBLE);
             updatePatient.setVisibility(View.INVISIBLE);
             logout.setVisibility(View.INVISIBLE);
         }

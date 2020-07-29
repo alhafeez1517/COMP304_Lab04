@@ -8,23 +8,13 @@ public class PatientRepository
 {
 
     private final PatientDao patientDao;
-    private List<Patient> patientsList;
-    //
+
     public PatientRepository(Context context) {
         //create a database object
         AppDatabase db = AppDatabase.getInstance(context);
         //create an interface object
         patientDao = db.patientDao();
-        //call interface method
-        patientsList = patientDao.getAllPatients();
     }
-    // returns query results as LiveData object
-
-    List<Patient> getAllPatients()
-    {
-        return patientsList;
-    }
-    //inserts a patient asynchronously
 
     public void insert(Patient patient)
     {

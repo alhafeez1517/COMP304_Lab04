@@ -13,9 +13,6 @@ public interface PatientDao
     @Insert (onConflict = OnConflictStrategy.REPLACE)
     void insert(Patient patient);
 
-    @Query("select * from Patient order by firstName")
-    List<Patient> getAllPatients();
-
     @Query("select * from Patient where nurseId = :nurseId")
     List<Patient> getAllPatientsForNurse(int nurseId);
 

@@ -6,13 +6,14 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Patient.class, MedicalTest.class, Nurse.class}, version = 1)
+@Database(entities = {Patient.class, MedicalTest.class, Nurse.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase
 {
     private static volatile AppDatabase INSTANCE;
     private static final String DATABASE_NAME = "HospitalData";
     public abstract PatientDao patientDao();
     public abstract NurseDao nurseDao();
+    public abstract MedicalTestDao medicalTestDao();
     //
 
     //
@@ -20,7 +21,7 @@ public abstract class AppDatabase extends RoomDatabase
         if (INSTANCE == null) {
             //Create database object
             INSTANCE = Room.databaseBuilder(context,
-                    AppDatabase.class, DATABASE_NAME).allowMainThreadQueries().build();
+                    AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().allowMainThreadQueries().build();
         }
         return INSTANCE;
     }
